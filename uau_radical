@@ -1,0 +1,41 @@
+programa
+{
+	inclua biblioteca Arquivos --> a
+	
+	
+	funcao inicio()
+	{
+		cadeia continuar = ""
+		cadeia Tarefa
+		inteiro arquivo = a.abrir_arquivo("./tarefas.txt", a.MODO_ACRESCENTAR)
+
+		faca 
+		{
+			escreva("Insira uma tarefa que você deve realizar!\n")
+			leia(Tarefa)
+			a.escrever_linha(Tarefa,arquivo)
+			escreva("Deseja continuar?\n")
+			leia(continuar)
+			
+		}enquanto(continuar == "sim")
+
+			escreva("Aqui está sua lista de tarefas!\n")
+			Exibir_arquivo()
+			a.fechar_arquivo(arquivo)
+	}
+
+	funcao Exibir_arquivo()
+	{
+		a.fechar_arquivo()
+		cadeia ContarLinha
+		inteiro arquivo = a.abrir_arquivo("./tarefas.txt", a.MODO_LEITURA)
+
+		enquanto(nao a.fim_arquivo(arquivo))
+		{
+			ContarLinha = a.ler_linha(arquivo)
+			escreva(ContarLinha,"\n")
+		}
+
+		a.fechar_arquivo(arquivo)
+	}
+}
